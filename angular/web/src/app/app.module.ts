@@ -11,6 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
+import { MenuModule } from 'primeng/menu';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { FormsModule } from '@angular/forms';
     SliderModule,
     CalendarModule,
     InputTextModule,
-    FormsModule
+    FormsModule,
+    MenuModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
