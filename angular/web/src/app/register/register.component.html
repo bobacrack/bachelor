@@ -1,19 +1,47 @@
-<div>
-    <label for="firstName">Vorname:</label>
-    <input id="firstName" pInputText type="text" [(ngModel)]="firstName" />
-</div>
+<div class="center">
+    <div class="p-fluid" id="form">
+        <div class="col-2">
+            <label for="firstName">Vorname:</label>
+            <div class="col w-full">
+                <input id="firstName" pInputText type="text" [(ngModel)]="firstName" />
+            </div>
+        </div>
 
-<div>
-    <label for="lastName">Nachname:</label>
-    <input id="lastName" pInputText type="text" [(ngModel)]="lastName" />
-</div>
+        <div class="col-2">
+            <label for="lastName">Nachname:</label>
+            <div>
+                <input id="lastName" pInputText type="text" [(ngModel)]="lastName" />
+            </div>
+        </div>
 
-<div>
-    <label for="email">E-Mail:</label>
-    <input id="email" pInputText type="email" [(ngModel)]="email" />
-</div>
+        <div class="col-2">
+            <label for="email">E-Mail:</label>
+            <div>
+                <input id="email" pInputText type="email" [(ngModel)]="email" />
+            </div>
+        </div>
 
-<div>
-    <label for="birthday">Geburtstag:</label>
-    <p-calendar id="birthday" [(ngModel)]="birthday"></p-calendar>
+        <div class="col-2">
+            <label for="email">Username:</label>
+            <div>
+                <input id="username" pInputText type="username" [(ngModel)]="username" />
+            </div>
+        </div>
+
+        <div class="col-2">
+            <label for="birthday">Geburtstag:</label>
+            <div>
+                <p-calendar [(ngModel)]="birthday" [showIcon]="true"></p-calendar>
+            </div>
+        </div>
+
+        <div class="buttoncontainer">
+            <div class="left">
+                <p-button pRipple label="Submit"></p-button>
+            </div>
+            <div class="right">
+                <p-button href="/" label="Cancel"></p-button>
+            </div>
+        </div>
+    </div>
 </div>

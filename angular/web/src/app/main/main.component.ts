@@ -12,11 +12,13 @@ export class MainComponent implements OnInit {
   menuItems: MenuItem[];
   menuHome: MenuItem;
   value: any;
+  birthday: Date;
+
 
   ngOnInit(): void {
     this.menuHome = { icon: "pi pi-home" }
     this.menuItems = [
-      { label: "AngularJS" },
+      { label: "register", url: "/register" },
       { label: "ReactJS" },
       { label: "HTML" },
       { label: "JavaScript" },

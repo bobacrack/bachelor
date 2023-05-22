@@ -13,6 +13,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 import { MenuModule } from 'primeng/menu';
 import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ToastModule } from 'primeng/toast';
     InputTextModule,
     FormsModule,
     MenuModule,
-    ToastModule
+    ToastModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
