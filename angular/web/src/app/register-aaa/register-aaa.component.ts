@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css', "../../../src/styles.css"]
+  selector: 'app-register-aaa',
+  templateUrl: './register-aaa.component.html',
+  styleUrls: ['./register-aaa.component.css', "../../../src/styles.css"]
 })
-export class RegisterComponent {
+export class RegisterAAAComponent {
   firstName: string;
   lastName: string;
   username: string;
@@ -34,4 +34,5 @@ export class RegisterComponent {
     console.log('E-Mail:', this.email);
     console.log('Geburtstag:', this.birthday);
   }
+
 }

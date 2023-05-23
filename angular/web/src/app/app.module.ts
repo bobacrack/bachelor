@@ -14,12 +14,16 @@ import { FormsModule } from '@angular/forms';
 import { MenuModule } from 'primeng/menu';
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
+import { RegisterAAComponent } from './register-aa/register-aa.component';
+import { RegisterAAAComponent } from './register-aaa/register-aaa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     RegisterComponent,
+    RegisterAAComponent,
+    RegisterAAAComponent,
   ],
   imports: [
     BrowserModule,

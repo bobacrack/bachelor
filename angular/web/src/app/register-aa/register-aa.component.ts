@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css', "../../../src/styles.css"]
+  selector: 'app-register-aa',
+  templateUrl: './register-aa.component.html',
+  styleUrls: ['./register-aa.component.css', "../../../src/styles.css"]
 })
-export class RegisterComponent {
+export class RegisterAAComponent {
   firstName: string;
   lastName: string;
   username: string;
