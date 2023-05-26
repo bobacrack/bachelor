@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterAAComponent } from './register-aa/register-aa.component';
+import { RegisterAAAComponent } from './register-aaa/register-aaa.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: 'main', component: MainComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'registerAA', component: RegisterAAComponent },
+  { path: 'register/A', component: RegisterComponent },
+  { path: 'register/AA', component: RegisterAAComponent },
+  { path: 'register/AAA', component: RegisterAAAComponent },
 ];
 
 @NgModule({

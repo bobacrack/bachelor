@@ -10,5 +10,18 @@ export class AppComponent {
   title = 'Accessibility possibility of implementation';
   menuItems: MenuItem[];
 
+  isExpanded: boolean = false;
+
+  expandLinks() {
+    this.isExpanded = true;
+  }
+
+  collapseLinks() {
+    this.isExpanded = false;
+  }
+
+  toggleLinks() {
+    this.isExpanded = !this.isExpanded;
+  }
 
 }

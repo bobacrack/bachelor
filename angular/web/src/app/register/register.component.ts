@@ -22,6 +22,7 @@ export class RegisterComponent {
   }
 
   checkEmailValid(mail: string): boolean {
+    console.log(this.emailRegex.test(mail));
     return this.emailRegex.test(mail);
   }
 

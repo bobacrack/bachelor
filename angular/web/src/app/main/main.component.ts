@@ -18,7 +18,7 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     this.menuHome = { icon: "pi pi-home" }
     this.menuItems = [
-      { label: "register", url: "/register" },
+      { label: "register", url: "/register/A" },
       { label: "ReactJS" },
       { label: "HTML" },
       { label: "JavaScript" },

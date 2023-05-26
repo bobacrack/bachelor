@@ -14,3 +14,45 @@
     float: right;
     padding: 10px;
 }
+
+
+
+.expandable-button {
+    padding-left: 120px;
+    position: relative;
+    display: inline-block;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.links-container {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    min-width: max-content;
+    width: calc(100% + 5%);
+    white-space: nowrap;
+    opacity: 0;
+    z-index: 1;
+    /* Initially set opacity to 0 */
+    transition: opacity 0.4s ease;
+    /* Add transition for smooth opening/closing */
+}
+
+.links-container.expanded {
+    opacity: 1;
+    /* Set opacity to 1 for expanded state */
+}
+
+.links-container a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
