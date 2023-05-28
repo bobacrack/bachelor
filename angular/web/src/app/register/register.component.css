@@ -6,6 +6,11 @@
     padding: 5rem;
 }
 
+*:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 #form {
     width: 30rem;
     height: 29rem;
@@ -39,4 +44,45 @@
     padding: 7px;
     width: 45%;
     float: right !important;
+}
+
+
+.p-inputtext:focus,
+.p-inputtext:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
+    outline-style: none !important;
+    border: 1px solid lightgray !important;
+}
+
+
+.p-calendar:focus,
+.p-calendar:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
+    outline-style: none !important;
+    border: 1px solid lightgray !important;
+}
+
+input:hover {
+    outline: none !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
+    outline-style: none !important;
+    border: 1px solid lightgray !important;
+}
+
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
+    outline-style: none !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    :focus:not(:focus-visible) {
+        outline: none !important;
+    }
 }

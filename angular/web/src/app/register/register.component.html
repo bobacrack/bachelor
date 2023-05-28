@@ -29,10 +29,11 @@
             </div>
         </div>
 
-        <div class="col-2">
+        <div class="col-2" tabindex="-1">
             <label for="birthday">Geburtstag:</label>
             <div>
-                <p-calendar aria-label="input birthday" [(ngModel)]="birthday" [showIcon]="true"></p-calendar>
+                <p-calendar #myCalendar aria-label="input birthday" name="date" [(ngModel)]="birthday"
+                    [showIcon]="true"></p-calendar>
             </div>
         </div>
 

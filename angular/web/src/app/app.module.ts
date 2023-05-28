@@ -16,6 +16,7 @@ import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { RegisterAAComponent } from './register-aa/register-aa.component';
 import { RegisterAAAComponent } from './register-aaa/register-aaa.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { RegisterAAAComponent } from './register-aaa/register-aaa.component';
     FormsModule,
     MenuModule,
     ToastModule,
-    ButtonModule
+    ButtonModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
