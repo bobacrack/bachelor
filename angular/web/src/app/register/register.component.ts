@@ -12,18 +12,70 @@ export class RegisterComponent {
   email: string;
   birthday: Date;
   validated: boolean;
+  isAdult: boolean;
+  firstNameExists: boolean;
+  lastNameExistst: boolean;
+  userNameExistst: boolean;
+  emailValid: boolean;
   readonly emailRegex: RegExp = /^.*@hft.de$/;
 
   constructor() {
     this.firstName = '';
     this.lastName = '';
+    this.username = '';
     this.email = '';
     this.validated = false;
   }
 
-  checkEmailValid(mail: string): boolean {
-    console.log(this.emailRegex.test(mail));
-    return this.emailRegex.test(mail);
+  validate(): boolean {
+    if (this.firstNameExists && this.lastNameExistst &&
+      this.emailValid && this.isAdult) {
+      this.validated = true;
+      return true;
+    }
+    return false;
+  }
+
+  checkEmailValid(mail: string): void {
+    this.emailValid = this.emailRegex.test(mail);
+    this.validate();
+  }
+
+  checkName(): void {
+    if (this.firstName != '') {
+      this.firstNameExists = true;
+      console.log("first name exists: " + this.firstNameExists)
+    } else {
+      this.firstNameExists = false;
+    }
+    if (this.lastName != '') {
+      this.lastNameExistst = true;
+      console.log("lastname exists: " + this.lastNameExistst)
+    } else {
+      this.lastNameExistst = false;
+    }
+    if (this.username != '') {
+      this.userNameExistst = true;
+      console.log("lastname exists: " + this.userNameExistst)
+    } else {
+      this.userNameExistst = false;
+    }
+    this.validate()
+  }
+
+  checkAge(birth: Date): void {
+    var today = new Date();
+    var age = today.getFullYear() - birth.getFullYear();
+    var month = today.getMonth() - birth.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < birth.getDate())) {
+      age--;
+    }
+    console.log("age: " + age)
+    if (age >= 18) {
+      this.isAdult = true;
+    } else
+      this.isAdult = false;
+    this.validate()
   }
 
   onSubmit() {

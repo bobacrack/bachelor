@@ -1,39 +1,51 @@
+<h1>Register</h1>
 <div class="center">
     <div class="p-fluid" id="form">
         <div class="col-2">
             <label for="firstName">Vorname:</label>
+            <label *ngIf="!firstNameExists" class="error-required">* field is required</label>
             <div class="col w-full">
-                <input id="firstName" aria-label="input firstName" pInputText type="text" [(ngModel)]="firstName" />
+                <input (ngModelChange)="checkName()" id="firstName" aria-label="input firstName" pInputText type="text"
+                    [(ngModel)]="firstName" />
             </div>
         </div>
 
         <div class="col-2">
             <label for="lastName">Nachname:</label>
+            <label *ngIf="!lastNameExistst" class="error-required">* field is required</label>
             <div>
-                <input id="lastName" aria-label="input lastName" pInputText type="text" [(ngModel)]="lastName" />
+                <input (ngModelChange)="checkName()" id="lastName" aria-label="input lastName" pInputText type="text"
+                    [(ngModel)]="lastName" />
             </div>
         </div>
 
         <div class="col-2">
             <label for="email">E-Mail:</label>
+            <label *ngIf="!email" class="error-required">* field is required </label>
             <div>
                 <input pInputText id="email" (change)="checkEmailValid(email)" aria-label="input email" pInputText
                     type="email" [(ngModel)]="email" />
             </div>
+            <label *ngIf="!emailValid" class="error-suggestion">email must be @hft.de</label>
         </div>
 
         <div class="col-2">
             <label for="email">Username:</label>
+            <label *ngIf="!userNameExistst" class="error-required">* field is required</label>
             <div>
-                <input id="username" aria-label="input username" pInputText type="username" [(ngModel)]="username" />
+                <input (ngModelChange)="checkName()" id="username" aria-label="input username" pInputText
+                    type="username" [(ngModel)]="username" />
             </div>
         </div>
 
-        <div class="col-2">
+        <div class="col-2" tabindex="-1">
             <label for="birthday">Geburtstag:</label>
+            <label *ngIf="!isAdult" class="error-required">* field is required</label>
             <div>
-                <p-calendar aria-label="input birthday" [(ngModel)]="birthday" [showIcon]="true"></p-calendar>
+                <p-calendar (onSelect)="checkAge(birthday)" #myCalendar aria-label="input birthday" name="date"
+                    [(ngModel)]="birthday" [showIcon]="true"></p-calendar>
             </div>
+            <label *ngIf="!emailValid" class="error-suggestion">must be 18 years old</label>
         </div>
 
         <div class="buttoncontainer">
@@ -41,7 +53,8 @@
                 <p-button pRipple aria-label="submit register form" [disabled]="!validated" label="Submit"></p-button>
             </div>
             <div class="right">
-                <p-button href="/" aria-label="cancel register form" label="Cancel"></p-button>
+                <a href="/"><p-button router-l aria-label="cancel register form" label="Cancel"></p-button>
+                </a>
             </div>
         </div>
     </div>
