@@ -5,13 +5,23 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="expandable-button" (mouseenter)="expandLinks()" (mouseleave)="collapseLinks()">
-            <button (keydown.enter)="toggleLinks()">Hover Me</button>
-            <div class="links-container" [ngClass]="{'expanded': isExpanded}" (mouseenter)="expandLinks()"
-                (mouseleave)="collapseLinks()">
-                <a class="nav-link" routerLink="../asdasd">Level A</a>
-                <a href="../AA">Level AA</a>
-                <a href="#">Level AAA</a>
+        <div>
+            <div class="expandable-button" (mouseenter)="expandSize()" (mouseleave)="collapseSize()">
+                <p-button (keydown.enter)="toggleSize()">Change Size</p-button>
+                <div class="button-container" [ngClass]="{'expanded': isSize}" (mouseenter)="expandSize()"
+                    (mouseleave)="collapseSize()">
+                    <p-button (onClick)="upSize()">up</p-button>
+                    <p-button (onclick)="downSize()">up</p-button>
+                </div>
+            </div>
+            <div class="expandable-button" (mouseenter)="expandLinks()" (mouseleave)="collapseLinks()">
+                <p-button (keydown.enter)="toggleLinks()">Chose Conformity</p-button>
+                <div class="links-container" [ngClass]="{'expanded': isExpanded}" (mouseenter)="expandLinks()"
+                    (mouseleave)="collapseLinks()">
+                    <a class="nav-link" routerLink="../asdasd">Level A</a>
+                    <a href="../AA">Level AA</a>
+                    <a href="#">Level AAA</a>
+                </div>
             </div>
         </div>
     </div>

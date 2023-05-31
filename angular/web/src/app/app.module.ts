@@ -17,6 +17,7 @@ import { ButtonModule } from 'primeng/button';
 import { RegisterAAComponent } from './register-aa/register-aa.component';
 import { RegisterAAAComponent } from './register-aaa/register-aaa.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DataService } from './service/data.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ButtonModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

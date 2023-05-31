@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-register-aa',
   templateUrl: './register-aa.component.html',
   styleUrls: ['./register-aa.component.css', "../../../src/styles.css"]
 })
-export class RegisterAAComponent {
+export class RegisterAAComponent implements OnInit {
   firstName: string;
   lastName: string;
   username: string;
@@ -17,14 +18,21 @@ export class RegisterAAComponent {
   lastNameExistst: boolean;
   userNameExistst: boolean;
   emailValid: boolean;
+  up: boolean;
   readonly emailRegex: RegExp = /^.*@hft.de$/;
 
-  constructor() {
+  size: string;
+
+  constructor(private data: DataService) {
     this.firstName = '';
     this.lastName = '';
     this.username = '';
     this.email = '';
     this.validated = false;
+    this.up = true;
+  }
+  ngOnInit(): void {
+    this.data.currentMessage.subscribe(message => this.size = message)
   }
 
   validate(): boolean {

@@ -15,8 +15,6 @@
     padding: 10px;
 }
 
-
-
 .expandable-button {
     padding-left: 120px;
     position: relative;
@@ -24,9 +22,8 @@
 }
 
 button {
-    border: none;
-    background-color: transparent;
-    padding: 0;
+    border-radius: 10px;
+    border-spacing: 2px;
     cursor: pointer;
 }
 
@@ -37,14 +34,39 @@ button {
     padding: 10px;
     background-color: #f1f1f1;
     min-width: max-content;
-    width: calc(100% + 5%);
     white-space: nowrap;
     opacity: 0;
-    z-index: 1;
     /* Initially set opacity to 0 */
     transition: opacity 0.4s ease;
     /* Add transition for smooth opening/closing */
 }
+
+.button-container {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    min-width: max-content;
+    white-space: nowrap;
+    opacity: 0;
+    x-index: 0;
+    /* Initially set opacity to 0 */
+    transition: opacity 0.4s ease;
+    /* Add transition for smooth opening/closing */
+}
+
+.button-container.expanded {
+    opacity: 1;
+    /* Set opacity to 1 for expanded state */
+}
+
+.button-container a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
 
 .links-container.expanded {
     opacity: 1;
