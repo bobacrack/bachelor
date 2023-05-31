@@ -29,25 +29,20 @@ export class AppComponent implements OnInit {
 
   upSize() {
     if (this.size == "size1")
+      this.data.changeMessage("size15");
+    if (this.size == "size15")
+      this.data.changeMessage("size2");
+    if (this.size == "size2")
       this.data.changeMessage("size2");
   }
 
   downSize() {
-    if (this.size1) {
-      this.size1 = true;
-      this.size150 = false;
-      this.size200 = false;
-    }
-    if (this.size150) {
-      this.size1 = true;
-      this.size150 = false;
-      this.size200 = false;
-    }
-    if (this.size200) {
-      this.size1 = false;
-      this.size150 = true;
-      this.size200 = false;
-    }
+    if (this.size == "size1")
+      this.data.changeMessage("size1");
+    if (this.size == "size15")
+      this.data.changeMessage("size1");
+    if (this.size == "size2")
+      this.data.changeMessage("size15");
   }
 
   expandLinks() {
