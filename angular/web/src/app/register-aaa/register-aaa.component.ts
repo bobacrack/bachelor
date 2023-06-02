@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../service/location.service';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-register-aaa',
@@ -13,20 +14,78 @@ export class RegisterAAAComponent implements OnInit {
   email: string;
   birthday: Date;
   validated: boolean;
+  isAdult: boolean;
+  firstNameExists: boolean;
+  lastNameExistst: boolean;
+  userNameExistst: boolean;
+  emailValid: boolean;
+  up: boolean;
   readonly emailRegex: RegExp = /^.*@hft.de$/;
 
-  constructor(private location: LocationService) {
+  size: string;
+
+  constructor(private data: DataService, private location: LocationService) {
     this.firstName = '';
     this.lastName = '';
+    this.username = '';
     this.email = '';
     this.validated = false;
+    this.up = true;
   }
   ngOnInit(): void {
+    this.data.currentMessage.subscribe(message => this.size = message);
     this.location.currentLocation = 'register';
   }
 
-  checkEmailValid(mail: string): boolean {
-    return this.emailRegex.test(mail);
+  validate(): boolean {
+    if (this.firstNameExists && this.lastNameExistst &&
+      this.emailValid && this.isAdult) {
+      this.validated = true;
+      return true;
+    }
+    return false;
+  }
+
+  checkEmailValid(mail: string): void {
+    this.emailValid = this.emailRegex.test(mail);
+    this.validate();
+  }
+
+  checkName(): void {
+    if (this.firstName != '') {
+      this.firstNameExists = true;
+      console.log("first name exists: " + this.firstNameExists)
+    } else {
+      this.firstNameExists = false;
+    }
+    if (this.lastName != '') {
+      this.lastNameExistst = true;
+      console.log("lastname exists: " + this.lastNameExistst)
+    } else {
+      this.lastNameExistst = false;
+    }
+    if (this.username != '') {
+      this.userNameExistst = true;
+      console.log("lastname exists: " + this.userNameExistst)
+    } else {
+      this.userNameExistst = false;
+    }
+    this.validate()
+  }
+
+  checkAge(birth: Date): void {
+    var today = new Date();
+    var age = today.getFullYear() - birth.getFullYear();
+    var month = today.getMonth() - birth.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < birth.getDate())) {
+      age--;
+    }
+    console.log("age: " + age)
+    if (age >= 18) {
+      this.isAdult = true;
+    } else
+      this.isAdult = false;
+    this.validate()
   }
 
   onSubmit() {

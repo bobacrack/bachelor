@@ -6,8 +6,8 @@ import { RegisterAAComponent } from './register-aa/register-aa.component';
 import { RegisterAAAComponent } from './register-aaa/register-aaa.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
-  { path: 'main', component: MainComponent },
+  { path: '', redirectTo: 'main/A', pathMatch: 'full' },
+  { path: 'main/A', component: MainComponent },
   { path: 'register/A', component: RegisterComponent },
   { path: 'register/AA', component: RegisterAAComponent },
   { path: 'register/AAA', component: RegisterAAAComponent },

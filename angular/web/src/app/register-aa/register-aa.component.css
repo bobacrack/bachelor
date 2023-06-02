@@ -81,6 +81,18 @@
     font-size: 200%;
 }
 
+.button-one {
+    font-size: 100% !important;
+}
+
+.button-half {
+    font-size: 150% !important;
+}
+
+.button-two {
+    font-size: 200% !important;
+}
+
 .error-suggestion-one {
     color: red;
     padding-left: 5px;

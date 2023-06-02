@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DataService } from './service/data.service';
 import { MessageService } from 'primeng/api';
 import { CardModule } from 'primeng/card';
+import { MainAAComponent } from './main-aa/main-aa.component';
+import { MainAAAComponent } from './main-aaa/main-aaa.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { CardModule } from 'primeng/card';
     RegisterComponent,
     RegisterAAComponent,
     RegisterAAAComponent,
+    MainAAComponent,
+    MainAAAComponent,
   ],
   imports: [
     BrowserModule,
