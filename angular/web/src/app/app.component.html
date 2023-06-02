@@ -1,35 +1,22 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Accessibility implementation test</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div>
-            <div class="expandable-button" (mouseenter)="expandSize()" (mouseleave)="collapseSize()">
-                <p-button (keydown.enter)="toggleSize()">Change Size</p-button>
-                <div class="button-container" [ngClass]="{'expanded': isSize}" (mouseenter)="expandSize()"
-                    (mouseleave)="collapseSize()">
-                    <p-button (onClick)="upSize()">up</p-button>
-                    <p-button (onclick)="downSize()">up</p-button>
-                </div>
-            </div>
-            <div class="expandable-button" (mouseenter)="expandLinks()" (mouseleave)="collapseLinks()">
-                <p-button (keydown.enter)="toggleLinks()">Chose Conformity</p-button>
-                <div class="links-container" [ngClass]="{'expanded': isExpanded}" (mouseenter)="expandLinks()"
-                    (mouseleave)="collapseLinks()">
-                    <a class="nav-link" routerLink="../asdasd">Level A</a>
-                    <a href="../AA">Level AA</a>
-                    <a href="#">Level AAA</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
+<header>
+    <h2>Accessibility Test</h2>
+    <nav>
+        <ul class="navLinks">
+            <li><a routerLink="about">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+    </nav>
+    <p-toast></p-toast>
+    <p-menu #menu [model]="items" [popup]="true"></p-menu>
+    <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" label="Show"></button>
+</header>
 
 <div class="container-fluid">
     <main role="main" class="">
-        <button (click)="downSize()">change</button>
+        <button (click)="upSize()">up</button>
+        <button (click)="downSize()">down</button>
         <router-outlet></router-outlet>
     </main>
 </div>

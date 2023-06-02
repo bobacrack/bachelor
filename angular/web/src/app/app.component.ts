@@ -27,22 +27,40 @@ export class AppComponent implements OnInit {
   size150: boolean = false;
   size200: boolean = false;
 
+  items: MenuItem[] = [
+    { label: 'Level A', url: './A' },
+    { label: 'Level AA', url: './AA' },
+    { label: 'Level AAA', url: '../AAA' },
+  ]
+
   upSize() {
-    if (this.size == "size1")
+    if (this.size == "size1") {
       this.data.changeMessage("size15");
-    if (this.size == "size15")
+      return
+    }
+    if (this.size == "size15") {
       this.data.changeMessage("size2");
-    if (this.size == "size2")
+      return
+    }
+    if (this.size == "size2") {
       this.data.changeMessage("size2");
+      return
+    }
   }
 
   downSize() {
-    if (this.size == "size1")
+    if (this.size == "size1") {
       this.data.changeMessage("size1");
-    if (this.size == "size15")
+      return
+    }
+    if (this.size == "size15") {
       this.data.changeMessage("size1");
-    if (this.size == "size2")
+      return
+    }
+    if (this.size == "size2") {
       this.data.changeMessage("size15");
+      return
+    }
   }
 
   expandLinks() {
@@ -68,5 +86,7 @@ export class AppComponent implements OnInit {
   toggleSize() {
     this.isSize = !this.isSize;
   }
+
+
 
 }

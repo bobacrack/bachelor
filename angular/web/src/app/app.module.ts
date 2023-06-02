@@ -18,6 +18,9 @@ import { RegisterAAComponent } from './register-aa/register-aa.component';
 import { RegisterAAAComponent } from './register-aaa/register-aaa.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DataService } from './service/data.service';
+import { MessageService } from 'primeng/api';
+import { CardModule } from 'primeng/card';
+
 
 @NgModule({
   declarations: [
@@ -40,8 +43,9 @@ import { DataService } from './service/data.service';
     ToastModule,
     ButtonModule,
     BrowserAnimationsModule,
+    CardModule
   ],
-  providers: [DataService],
+  providers: [DataService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,70 @@
+header {
+    background-color: rgb(233, 232, 232);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    width: 109%;
+}
+
+h2 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.navLinks {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navLinks li {
+    margin: 0 10px;
+}
+
+a {
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+
+p-button {
+    font-size: 16px;
+}
+
+.label {
+    font-size: 100%;
+}
+
+.label-half {
+    font-size: 150%;
+}
+
+.label-two {
+    font-size: 200%;
+}
+
+
+
+.navLinks {
+    list-style: none;
+    font-size: 30px;
+}
+
+.navLinks li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navLinks li a {
+    transition: all 0.3s ease 0s;
+}
+
+
 .navbar {
     background-color: darkslateblue;
     width: 100%;
