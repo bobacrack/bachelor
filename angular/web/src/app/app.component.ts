@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from "primeng/api";
 import { DataService } from './service/data.service';
+import { LocationService } from './service/location.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit {
     this.data.currentMessage.subscribe(message => this.size = message)
   }
 
-  constructor(private data: DataService) { }
+  constructor(private data: DataService, private location: LocationService) { }
 
   title = 'Accessibility possibility of implementation';
   menuItems: MenuItem[];
@@ -23,15 +24,23 @@ export class AppComponent implements OnInit {
 
   size: string = "size1";
 
+  path: string = '';
+
   size1: boolean = true;
   size150: boolean = false;
   size200: boolean = false;
 
   items: MenuItem[] = [
-    { label: 'Level A', url: './A' },
-    { label: 'Level AA', url: './AA' },
-    { label: 'Level AAA', url: '../AAA' },
+    { label: 'Level A' },
+    { label: 'Level AA' },
+    { label: 'Level AAA' },
   ]
+
+  getCurrentLocation(): void {
+    this.items[0].url = this.location.currentLocation + '/A';
+    this.items[1].url = this.location.currentLocation + '/AA';
+    this.items[2].url = this.location.currentLocation + '/AAA';
+  }
 
   upSize() {
     if (this.size == "size1") {

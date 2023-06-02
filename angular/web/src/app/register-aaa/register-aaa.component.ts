@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LocationService } from '../service/location.service';
 
 @Component({
   selector: 'app-register-aaa',
   templateUrl: './register-aaa.component.html',
   styleUrls: ['./register-aaa.component.css', "../../../src/styles.css"]
 })
-export class RegisterAAAComponent {
+export class RegisterAAAComponent implements OnInit {
   firstName: string;
   lastName: string;
   username: string;
@@ -14,11 +15,14 @@ export class RegisterAAAComponent {
   validated: boolean;
   readonly emailRegex: RegExp = /^.*@hft.de$/;
 
-  constructor() {
+  constructor(private location: LocationService) {
     this.firstName = '';
     this.lastName = '';
     this.email = '';
     this.validated = false;
+  }
+  ngOnInit(): void {
+    this.location.currentLocation = 'register';
   }
 
   checkEmailValid(mail: string): boolean {

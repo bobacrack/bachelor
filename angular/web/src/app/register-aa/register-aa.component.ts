@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
+import { LocationService } from '../service/location.service';
 
 @Component({
   selector: 'app-register-aa',
@@ -23,7 +24,7 @@ export class RegisterAAComponent implements OnInit {
 
   size: string;
 
-  constructor(private data: DataService) {
+  constructor(private data: DataService, private location: LocationService) {
     this.firstName = '';
     this.lastName = '';
     this.username = '';
@@ -32,7 +33,8 @@ export class RegisterAAComponent implements OnInit {
     this.up = true;
   }
   ngOnInit(): void {
-    this.data.currentMessage.subscribe(message => this.size = message)
+    this.data.currentMessage.subscribe(message => this.size = message);
+    this.location.currentLocation = 'register';
   }
 
   validate(): boolean {
