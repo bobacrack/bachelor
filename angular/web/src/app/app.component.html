@@ -12,6 +12,8 @@
     <p-menu (onShow)="getCurrentLocation()" #menu [model]="items" [popup]="true"></p-menu>
     <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" label="Show"></button>
 </header>
+<p-breadcrumb styleClass="custom-breadcrumb" class="max-w-full" [model]="menuItems"
+    [home]="{ icon: ' pi pi-home' }"></p-breadcrumb>
 
 <div class="container-fluid">
     <main role="main" class="">

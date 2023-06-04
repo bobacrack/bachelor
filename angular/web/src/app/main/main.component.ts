@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MenuItem } from "primeng/api";
 import { DataService } from '../service/data.service';
 import { Router } from '@angular/router';
@@ -10,15 +10,17 @@ import { LocationService } from '../service/location.service';
   styleUrls: ['./main.component.css']
 })
 
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnDestroy {
 
   menuItems: MenuItem[];
+  menuItem: MenuItem = { label: 'home', url: 'main/A', preserveFragment: true }
   menuHome: MenuItem;
-  value: any;
-  birthday: Date;
   size: string;
 
   constructor(private data: DataService, private location: LocationService, private router: Router) {
+  }
+  ngOnDestroy(): void {
+    this.location.removeMenu();
   }
 
 
@@ -26,13 +28,11 @@ export class MainComponent implements OnInit {
     this.data.currentMessage.subscribe(message => this.size = message)
     this.location.currentLocation = 'main';
     this.menuHome = { icon: "pi pi-home" }
-    this.menuItems = [
-      { label: "register", url: "/register/A" },
-      { label: "ReactJS" },
-      { label: "HTML" },
-      { label: "JavaScript" },
-      { label: "PrimeNG" },
-    ];
+    this.location.appendMenu(this.menuItem);
+    this.location.breadcrumbLocation.forEach(element => {
+      console.log(element);
+    });
+    this.menuItems = this.location.breadcrumbLocation;
   }
 
   handleClick(link: string) {

@@ -5,25 +5,14 @@ import { Router } from '@angular/router';
 import { LocationService } from '../service/location.service';
 
 @Component({
-  selector: 'app-main-aa',
-  templateUrl: './main-aa.component.html',
-  styleUrls: ['./main-aa.component.css']
+  selector: 'app-sub-content',
+  templateUrl: './sub-content.component.html',
+  styleUrls: ['./sub-content.component.css']
 })
-export class MainAAComponent implements OnInit, OnDestroy {
-  menuItems: MenuItem[];
-  menuItem: MenuItem = { label: 'home', url: 'main/A' }
-  menuHome: MenuItem;
-  value: any;
-  birthday: Date;
-  size: string;
+export class SubContentComponent implements OnInit, OnDestroy {
 
   constructor(private data: DataService, private location: LocationService, private router: Router) {
   }
-
-  ngOnDestroy(): void {
-    this.location.removeMenu();
-  }
-
 
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message => this.size = message)
@@ -31,8 +20,17 @@ export class MainAAComponent implements OnInit, OnDestroy {
     this.menuHome = { icon: "pi pi-home" }
     this.location.appendMenu(this.menuItem);
     this.menuItems = this.location.breadcrumbLocation;
-
   }
+
+  ngOnDestroy(): void {
+    this.location.removeMenu();
+  }
+
+  menuItem: MenuItem = { label: 'home', url: 'sub/A' }
+  menuItems: MenuItem[];
+  menuHome: MenuItem;
+  size: string;
+
 
   handleClick(link: string) {
     this.redirectToAnotherPage(link);

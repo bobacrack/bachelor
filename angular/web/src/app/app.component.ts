@@ -17,14 +17,14 @@ export class AppComponent implements OnInit {
   constructor(private data: DataService, private location: LocationService) { }
 
   title = 'Accessibility possibility of implementation';
-  menuItems: MenuItem[];
+  menuItems: MenuItem[] = this.location.breadcrumbLocation;
 
   isExpanded: boolean = false;
   isSize: boolean = false;
-
   size: string = "size1";
 
   path: string = '';
+  isRegister = this.location.isRegister;
 
   size1: boolean = true;
   size150: boolean = false;

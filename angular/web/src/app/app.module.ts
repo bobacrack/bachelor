@@ -22,6 +22,12 @@ import { MessageService } from 'primeng/api';
 import { CardModule } from 'primeng/card';
 import { MainAAComponent } from './main-aa/main-aa.component';
 import { MainAAAComponent } from './main-aaa/main-aaa.component';
+import { ContentComponent } from './content/content.component';
+import { ContentAAComponent } from './content-aa/content-aa.component';
+import { ContentAAAComponent } from './content-aaa/content-aaa.component';
+import { SubContentComponent } from './sub-content/sub-content.component';
+import { SubContentAAComponent } from './sub-content-aa/sub-content-aa.component';
+import { SubContentAAAComponent } from './sub-content-aaa/sub-content-aaa.component';
 
 
 @NgModule({
@@ -33,6 +39,12 @@ import { MainAAAComponent } from './main-aaa/main-aaa.component';
     RegisterAAAComponent,
     MainAAComponent,
     MainAAAComponent,
+    ContentComponent,
+    ContentAAComponent,
+    ContentAAAComponent,
+    SubContentComponent,
+    SubContentAAComponent,
+    SubContentAAAComponent,
   ],
   imports: [
     BrowserModule,
