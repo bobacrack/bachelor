@@ -28,6 +28,7 @@ import { ContentAAAComponent } from './content-aaa/content-aaa.component';
 import { SubContentComponent } from './sub-content/sub-content.component';
 import { SubContentAAComponent } from './sub-content-aa/sub-content-aa.component';
 import { SubContentAAAComponent } from './sub-content-aaa/sub-content-aaa.component';
+import { ColorPickerModule } from 'primeng/colorpicker';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { SubContentAAAComponent } from './sub-content-aaa/sub-content-aaa.compon
     ToastModule,
     ButtonModule,
     BrowserAnimationsModule,
-    CardModule
+    CardModule,
+    ColorPickerModule
   ],
   providers: [DataService, MessageService],
   bootstrap: [AppComponent]
