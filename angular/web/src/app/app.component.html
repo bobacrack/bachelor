@@ -2,23 +2,21 @@
     <h2>Accessibility Test</h2>
     <nav>
         <ul class="navLinks">
-            <li><a routerLink="">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-
+            <li><a routerLink="" tabindex="0">Home</a></li>
+            <li><a href="#" tabindex="0">About</a></li>
+            <li><a href="#" tabindex="0">Contact</a></li>
         </ul>
     </nav>
     <p-toast></p-toast>
-    <p-menu (onShow)="getCurrentLocation()" #menu [model]="items" [popup]="true"></p-menu>
-    <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" label="Show"></button>
+    <p-menu (onShow)="getCurrentLocation()" #menu [model]="items" [popup]="true" tabindex="4"></p-menu>
+    <button pButton type="button" (focus)="menu.toggle($event)" (click)="menu.toggle($event)" icon="pi pi-bars"
+        label="A11y Menu"></button>
 </header>
 <p-breadcrumb styleClass="custom-breadcrumb" class="max-w-full" [model]="menuItems"
     [home]="{ icon: ' pi pi-home' }"></p-breadcrumb>
 
 <div class="container-fluid">
     <main role="main" class="">
-        <button (click)="upSize()">up</button>
-        <button (click)="downSize()">down</button>
         <router-outlet></router-outlet>
     </main>
 </div>

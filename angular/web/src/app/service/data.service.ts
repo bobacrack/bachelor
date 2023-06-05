@@ -6,12 +6,17 @@ import { BehaviorSubject } from "rxjs";
 export class DataService {
 
     private messageSource = new BehaviorSubject<string>("size1");
+    private levelSource = new BehaviorSubject<string>("A");
     currentMessage = this.messageSource.asObservable();
+    currentLevel = this.levelSource.asObservable();
 
     constructor() { }
 
     changeMessage(message: string) {
         this.messageSource.next(message);
-        console.log("changed message to: " + message)
+    }
+
+    changeLevel(level: string) {
+        this.levelSource.next(level);
     }
 }

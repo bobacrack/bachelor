@@ -12,9 +12,12 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message => this.size = message)
+    this.data.currentLevel.subscribe(level => this.level = level)
   }
 
-  constructor(private data: DataService, private location: LocationService) { }
+  constructor(private data: DataService, private location: LocationService) {
+    document.getElementById
+  }
 
   title = 'Accessibility possibility of implementation';
   menuItems: MenuItem[] = this.location.breadcrumbLocation;
@@ -23,6 +26,8 @@ export class AppComponent implements OnInit {
   isSize: boolean = false;
   size: string = "size1";
 
+  level: string = "A";
+
   path: string = '';
   isRegister = this.location.isRegister;
 
@@ -30,10 +35,15 @@ export class AppComponent implements OnInit {
   size150: boolean = false;
   size200: boolean = false;
 
+
   items: MenuItem[] = [
-    { label: 'Level A' },
-    { label: 'Level AA' },
-    { label: 'Level AAA' },
+    { label: 'Level A', tabindex: "0" },
+    { label: 'Level AA', tabindex: "0" },
+    { label: 'Level AAA', tabindex: "0" },
+    { separator: true },
+    { label: 'Font size up 50%', command: () => this.upSize(), tabindex: "0" },
+    { label: 'Font size down 50%', command: () => this.downSize(), tabindex: "0" },
+
   ]
 
   getCurrentLocation(): void {

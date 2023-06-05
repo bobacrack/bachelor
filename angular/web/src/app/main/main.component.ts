@@ -49,5 +49,19 @@ export class MainComponent implements OnInit, OnDestroy {
     this.router.navigate(['/' + link]);
   }
 
+  getHeaderClass(): string {
+    if (this.size == "size1") {
+      return "headerClass-one"
+    }
+    if (this.size == "size15") {
+      return "headerClass-half"
+    }
+    if (this.size == "size2") {
+      return "headerClass-two"
+    }
+    return "headerClass-one";
+
+  }
+
 
 }
