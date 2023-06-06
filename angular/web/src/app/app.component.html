@@ -3,14 +3,13 @@
     <nav>
         <ul class="navLinks">
             <li><a routerLink="" tabindex="0">Home</a></li>
-            <li><a href="#" tabindex="0">About</a></li>
+            <li><a href="/register/A" tabindex="0">About</a></li>
             <li><a href="#" tabindex="0">Contact</a></li>
         </ul>
     </nav>
     <p-toast></p-toast>
     <p-menu (onShow)="getCurrentLocation()" #menu [model]="items" [popup]="true" tabindex="4"></p-menu>
-    <button pButton type="button" (focus)="menu.toggle($event)" (click)="menu.toggle($event)" icon="pi pi-bars"
-        label="A11y Menu"></button>
+    <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" label="A11y Menu"></button>
 </header>
 <p-breadcrumb styleClass="custom-breadcrumb" class="max-w-full" [model]="menuItems"
     [home]="{ icon: ' pi pi-home' }"></p-breadcrumb>

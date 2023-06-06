@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../service/location.service';
+import { Router } from '@angular/router';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-register',
@@ -18,9 +20,11 @@ export class RegisterComponent implements OnInit {
   lastNameExistst: boolean;
   userNameExistst: boolean;
   emailValid: boolean;
+  size: string;
+
   readonly emailRegex: RegExp = /^.*@hft.de$/;
 
-  constructor(private location: LocationService) {
+  constructor(private location: LocationService, private data: DataService, private router: Router) {
     this.firstName = '';
     this.lastName = '';
     this.username = '';
@@ -28,6 +32,7 @@ export class RegisterComponent implements OnInit {
     this.validated = false;
   }
   ngOnInit(): void {
+    this.data.currentMessage.subscribe(message => this.size = message);
     this.location.currentLocation = 'register';
   }
 
@@ -43,6 +48,21 @@ export class RegisterComponent implements OnInit {
   checkEmailValid(mail: string): void {
     this.emailValid = this.emailRegex.test(mail);
     this.validate();
+  }
+
+
+  handleClick(link: string) {
+    this.redirectToAnotherPage(link);
+  }
+
+  handleKeyDown(event: KeyboardEvent, link: string) {
+    if (event.key === 'Enter') {
+      this.redirectToAnotherPage(link);
+    }
+  }
+
+  redirectToAnotherPage(link: string) {
+    this.router.navigate(['/' + link]);
   }
 
   checkName(): void {
