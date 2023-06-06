@@ -46,12 +46,6 @@
 }
 
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    :focus:not(:focus-visible) {
-        outline: none !important;
-    }
-}
-
 .error-required {
     color: red;
     float: right;
@@ -81,17 +75,6 @@
     font-size: 200%;
 }
 
-.button-one {
-    font-size: 100% !important;
-}
-
-.button-half {
-    font-size: 150% !important;
-}
-
-.button-two {
-    font-size: 200% !important;
-}
 
 .error-suggestion-one {
     color: red;
@@ -108,4 +91,28 @@
     color: red;
     padding-left: 5px;
     font-size: 200%;
+}
+
+:host ::ng-deep .calendar-one .p-calendar .p-inputtext {
+    font-size: 100% !important;
+}
+
+:host ::ng-deep .calendar-half .p-calendar .p-inputtext {
+    font-size: 150% !important;
+}
+
+:host ::ng-deep .calendar-two .p-calendar .p-inputtext {
+    font-size: 200% !important;
+}
+
+:host ::ng-deep .button-one .p-button {
+    font-size: 100% !important;
+}
+
+:host ::ng-deep .button-half .p-button {
+    font-size: 150% !important;
+}
+
+:host ::ng-deep .button-two .p-button {
+    font-size: 200% !important;
 }

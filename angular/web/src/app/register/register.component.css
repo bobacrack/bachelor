@@ -180,3 +180,15 @@ input:hover {
 :host ::ng-deep .calendar-two .p-calendar .p-inputtext {
     font-size: 200% !important;
 }
+
+:host ::ng-deep .button-one .p-button {
+    font-size: 100% !important;
+}
+
+:host ::ng-deep .button-half .p-button {
+    font-size: 150% !important;
+}
+
+:host ::ng-deep .button-two .p-button {
+    font-size: 200% !important;
+}
