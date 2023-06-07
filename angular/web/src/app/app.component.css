@@ -12,9 +12,6 @@ header {
     width: 100%;
 }
 
-h2 {
-    margin: 0;
-}
 
 nav {
     display: flex;
@@ -60,99 +57,10 @@ p-button {
 .navLinks {
     list-style: none;
     font-size: 30px;
+    flex-grow: 1;
 }
 
 .navLinks li {
     display: inline-block;
     padding: 0px 20px;
-}
-
-.navLinks li a {
-    transition: all 0.3s ease 0s;
-}
-
-
-.navbar {
-    background-color: darkslateblue;
-    width: 100%;
-    height: 70px;
-    margin: 10;
-    justify-items: center;
-}
-
-#logo {
-    padding: 6px;
-}
-
-.avatar {
-    float: right;
-    padding: 10px;
-}
-
-.expandable-button {
-    padding-left: 120px;
-    position: relative;
-    display: inline-block;
-}
-
-button {
-    border-radius: 10px;
-    border-spacing: 2px;
-    cursor: pointer;
-}
-
-.links-container {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    padding: 10px;
-    background-color: #f1f1f1;
-    min-width: max-content;
-    white-space: nowrap;
-    opacity: 0;
-    /* Initially set opacity to 0 */
-    transition: opacity 0.4s ease;
-    /* Add transition for smooth opening/closing */
-}
-
-.button-container {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    padding: 10px;
-    background-color: #f1f1f1;
-    min-width: max-content;
-    white-space: nowrap;
-    opacity: 0;
-    x-index: 0;
-    /* Initially set opacity to 0 */
-    transition: opacity 0.4s ease;
-    /* Add transition for smooth opening/closing */
-}
-
-.button-container.expanded {
-    opacity: 1;
-    /* Set opacity to 1 for expanded state */
-}
-
-.button-container a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-}
-
-
-.links-container.expanded {
-    opacity: 1;
-    /* Set opacity to 1 for expanded state */
-}
-
-.links-container a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-}
-
-h1 {
-    font-size: 200% !important;
 }

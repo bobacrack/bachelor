@@ -63,9 +63,14 @@ p-card:focus-visible {
     display: flex;
     justify-content: center;
     text-align: center;
+    flex-direction: column;
 }
 
 h1 {
     font-size: 140px !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
