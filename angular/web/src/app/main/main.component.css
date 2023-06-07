@@ -58,3 +58,14 @@ p-card:focus-visible {
 .headerClass-two {
     font-size: 200%;
 }
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 140px !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

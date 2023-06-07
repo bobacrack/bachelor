@@ -37,9 +37,9 @@ export class AppComponent implements OnInit {
 
 
   items: MenuItem[] = [
-    { label: 'Level A', tabindex: "0" },
-    { label: 'Level AA', tabindex: "0" },
-    { label: 'Level AAA', tabindex: "0" },
+    { label: 'Level A', tabindex: "0", target: "_self" },
+    { label: 'Level AA', tabindex: "0", target: "_self" },
+    { label: 'Level AAA', tabindex: "0", target: "_self" },
     { separator: true },
     { label: 'Font size up 50%', command: () => this.upSize(), tabindex: "0" },
     { label: 'Font size down 50%', command: () => this.downSize(), tabindex: "0" },

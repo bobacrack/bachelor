@@ -50,3 +50,8 @@ p-card {
 .headerClass-two {
     font-size: 200%;
 }
+
+h1 {
+    font-size: 140px !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
