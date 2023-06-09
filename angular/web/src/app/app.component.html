@@ -11,6 +11,8 @@
         <p-toast></p-toast>
         <p-menu (onShow)="getCurrentLocation()" #menu [model]="items" [popup]="true" tabindex="4"></p-menu>
         <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" label="A11y Menu"></button>
+        <p-colorPicker [(ngModel)]="foreground" (onChange)="changeForeground()"></p-colorPicker>
+        <p-colorPicker [(ngModel)]="background" (onChange)="changeBackground()"></p-colorPicker>
     </div>
 </header>
 <p-breadcrumb styleClass="custom-breadcrumb" class="max-w-full" [model]="menuItems"

@@ -8,7 +8,7 @@
                 [ngClass]="{'error-required': size == 'size1', 'error-required-two' : size == 'size2', 'error-required-half' : size == 'size15' }">*
                 field is required</label>
             <div class="col w-full">
-                <input [attr.aria-required]="true" [attr.aria-invalid]="!firstNameExists"
+                <input [attr.aria-required]="true" [attr.aria-invalid]="!firstNameExists" spellcheck="true"
                     [ngClass]="{'p-input-one' : size == 'size1', 'p-input-half' : size == 'size15', 'p-input-two' : size == 'size2'}"
                     (ngModelChange)="checkName()" id="firstName" aria-label="input firstName" pInputText type="text"
                     [(ngModel)]="firstName" />

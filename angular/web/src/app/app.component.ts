@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message => this.size = message)
     this.data.currentLevel.subscribe(level => this.level = level)
+    this.data.currentForeground.subscribe(color => this.foreground = color);
+    this.data.currenBackground.subscribe(color => this.background = color);
   }
 
   constructor(private data: DataService, private location: LocationService) {
@@ -25,7 +27,8 @@ export class AppComponent implements OnInit {
   isExpanded: boolean = false;
   isSize: boolean = false;
   size: string = "size1";
-
+  foreground: string = "#000000";
+  background: string = "#ffffff";
   level: string = "A";
 
   path: string = '';
@@ -50,6 +53,14 @@ export class AppComponent implements OnInit {
     this.items[0].url = this.location.currentLocation + '/A';
     this.items[1].url = this.location.currentLocation + '/AA';
     this.items[2].url = this.location.currentLocation + '/AAA';
+  }
+
+  changeForeground(): void {
+    this.data.changeForegorund(this.foreground);
+  }
+
+  changeBackground(): void {
+    this.data.changeBackgorund(this.background);
   }
 
   upSize() {

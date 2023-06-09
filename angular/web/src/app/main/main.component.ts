@@ -17,6 +17,7 @@ export class MainComponent implements OnInit, OnDestroy {
   menuHome: MenuItem;
   size: string;
 
+
   constructor(private data: DataService, private location: LocationService, private router: Router) {
   }
   ngOnDestroy(): void {
@@ -29,10 +30,8 @@ export class MainComponent implements OnInit, OnDestroy {
     this.location.currentLocation = 'main';
     this.menuHome = { icon: "pi pi-home" }
     this.location.appendMenu(this.menuItem);
-    this.location.breadcrumbLocation.forEach(element => {
-      console.log(element);
-    });
     this.menuItems = this.location.breadcrumbLocation;
+
   }
 
   handleClick(link: string) {

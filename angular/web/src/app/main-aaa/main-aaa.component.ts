@@ -21,6 +21,9 @@ export class MainAAAComponent implements OnDestroy, OnInit {
   userNameExistst: boolean;
   emailValid: boolean;
 
+  foreground: string;
+  background: string;
+
   readonly emailRegex: RegExp = /^.*@hft.de$/;
 
 
@@ -36,10 +39,9 @@ export class MainAAAComponent implements OnDestroy, OnInit {
     this.location.currentLocation = 'main';
     this.menuHome = { icon: "pi pi-home" }
     this.location.appendMenu(this.menuItem);
-    this.location.breadcrumbLocation.forEach(element => {
-      console.log(element);
-    });
     this.menuItems = this.location.breadcrumbLocation;
+    this.data.currentForeground.subscribe(color => this.foreground = color);
+    this.data.currenBackground.subscribe(color => this.background = color);
   }
 
   handleClick(link: string) {
