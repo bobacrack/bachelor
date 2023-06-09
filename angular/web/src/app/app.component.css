@@ -18,6 +18,10 @@ nav {
     align-items: center;
 }
 
+.abutton {
+    display: flex;
+    justify-content: center;
+}
 
 
 .navLinks {
