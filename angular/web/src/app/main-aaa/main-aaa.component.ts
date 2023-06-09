@@ -42,6 +42,8 @@ export class MainAAAComponent implements OnDestroy, OnInit {
     this.menuItems = this.location.breadcrumbLocation;
     this.data.currentForeground.subscribe(color => this.foreground = color);
     this.data.currenBackground.subscribe(color => this.background = color);
+    this.data.changeLevel('AAA');
+
   }
 
   handleClick(link: string) {

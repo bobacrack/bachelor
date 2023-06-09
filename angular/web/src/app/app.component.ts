@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   size: string = "size1";
   foreground: string = "#000000";
   background: string = "#ffffff";
-  level: string = "A";
+  level: string;
 
   path: string = '';
   isRegister = this.location.isRegister;

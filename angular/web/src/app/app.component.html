@@ -11,7 +11,7 @@
         <p-toast></p-toast>
         <p-menu (onShow)="getCurrentLocation()" #menu [model]="items" [popup]="true" tabindex="4"></p-menu>
         <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" label="A11y Menu"></button>
-        <div class="colorPickerDiv" [style]="{'padding-top': '5px'}">
+        <div *ngIf="level == 'AAA'" class="colorPickerDiv" [style]="{'padding-top': '5px'}">
             <p-colorPicker aria-label="choose foreground color" class="colorPicker" [(ngModel)]="foreground"
                 (onChange)="changeForeground()"></p-colorPicker>
             <p-colorPicker aria-label="choose background color" [(ngModel)]="background"
@@ -19,7 +19,7 @@
         </div>
     </div>
 </header>
-<p-breadcrumb styleClass="custom-breadcrumb" class="max-w-full" [model]="menuItems"
+<p-breadcrumb *ngIf="level == 'AAA'" styleClass="custom-breadcrumb" class="max-w-full" [model]="menuItems"
     [home]="{ icon: ' pi pi-home' }"></p-breadcrumb>
 
 <div class="container-fluid">

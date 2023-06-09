@@ -31,6 +31,7 @@ export class MainComponent implements OnInit, OnDestroy {
     this.menuHome = { icon: "pi pi-home" }
     this.location.appendMenu(this.menuItem);
     this.menuItems = this.location.breadcrumbLocation;
+    this.data.changeLevel('A');
 
   }
 
