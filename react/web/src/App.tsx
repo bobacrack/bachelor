@@ -6,13 +6,20 @@ import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import BlankComponent from './main/Main';
-import { DataService } from './service/data.service';
+import { DataService, useDataService } from './service/data.service';
+import MainAA from './mainAA/MainAA';
+
 
 function App() {
 
 
   const toast = useRef(null);
   const menuLeft = useRef<Menu>(null!);
+
+  const dataService = useDataService();
+  const { currentLevel, currentSize, setLevel, setSize } = dataService;
+
+
   /*
     var service = new DataService()
     var size = service.getSize();
@@ -38,52 +45,46 @@ function App() {
     { label: 'Level AA', tabindex: "0", target: "_self" },
     { label: 'Level AAA', tabindex: "0", target: "_self" },
     { separator: true },
-    //{ label: 'Font size up 50%', command: () => upSize(), tabindex: "0" },
-    //{ label: 'Font size down 50%', command: () => downSize(), tabindex: "0" },
+    { label: 'Font size up 50%', command: () => upSize(), tabindex: "0" },
+    { label: 'Font size down 50%', command: () => downSize(), tabindex: "0" },
   ]
-  /*
-    const upSize = () => {
-      if (size == "size1") {
-        service.setSize("size15");
-        size = service.currentSize
-        console.log(service.getSize());
-        return
-      }
-      if (size == "size15") {
-        service.setSize("size2");
-        size = service.currentSize
-        console.log(service.getSize());
-        return
-      }
-      if (size == "size2") {
-        service.setSize("size2");
-        size = service.currentSize
-        console.log(service.getSize());
-        return
-      }
+
+  const upSize = () => {
+    if (currentSize == "size1") {
+      setSize("size15");
+      console.log(currentSize);
+      return
     }
-  
-    const downSize = () => {
-      if (size == "size1") {
-        service.setSize("size1");
-        size = service.currentSize
-        console.log(service.getSize());
-        return
-      }
-      if (size == "size15") {
-        service.setSize("size1");
-        size = service.currentSize
-        console.log(service.getSize());
-        return
-      }
-      if (size == "size2") {
-        service.setSize("size15");
-        size = service.currentSize
-        console.log(service.getSize());
-        return
-      }
+    if (currentSize == "size15") {
+      setSize("size2");
+      console.log(currentSize);
+      return
     }
-  */
+    if (currentSize == "size2") {
+      setSize("size2");
+      console.log(currentSize);
+      return
+    }
+    console.log("noting")
+  }
+
+  const downSize = () => {
+    if (currentSize == "size1") {
+      setSize("size1");
+      console.log(currentSize);
+      return
+    }
+    if (currentSize == "size15") {
+      setSize("size1");
+      console.log(currentSize);
+      return
+    }
+    if (currentSize == "size2") {
+      setSize("size15");
+      console.log(currentSize);
+      return
+    }
+  }
 
   return (
     <div className="App">
@@ -108,6 +109,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<DataService><BlankComponent /></DataService>} />
+          <Route path='/main/AA' element={<MainAA />} />
+
         </Routes>
       </BrowserRouter>
     </div >

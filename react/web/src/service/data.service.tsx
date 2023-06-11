@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { BehaviorSubject } from "rxjs";
 
 interface DataServiceContextType {
     currentLevel: string;
@@ -11,13 +12,14 @@ interface DataServiceProps {
     children: ReactNode;
 }
 
+
 // Create a context for the service
 export const DataServiceContext = createContext<DataServiceContextType | null>(null);
 
 // DataService component
 export const DataService = ({ children }: DataServiceProps) => {
     const [currentLevel, setCurrentLevel] = useState('A');
-    const [currentSize, setCurrentSize] = useState('Size1');
+    const [currentSize, setCurrentSize] = useState('size1');
 
     // Function to update the currentLevel value
     const setLevel = (level: string) => {
