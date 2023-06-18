@@ -1,35 +1,42 @@
+import { BehaviorSubject, Observable } from 'rxjs';
 
-import { BehaviorSubject } from "rxjs";
+class MyService {
+    private currentSizeSubject: BehaviorSubject<string>;
+    private currentLevelSubject: BehaviorSubject<string>;
+    private currentForegorundSubject: BehaviorSubject<string>;
+    private currentBackgroundSubject: BehaviorSubject<string>;
 
 
-export class Serv {
-
-    private messageSource = new BehaviorSubject<string>("size1");
-    private levelSource = new BehaviorSubject<string>("A");
-    private foregroundSource = new BehaviorSubject<string>("#000000");
-    private backgroundSource = new BehaviorSubject<string>("#ffffff");
-    currentMessage = this.messageSource.asObservable();
-    currentLevel = this.levelSource.asObservable();
-    currentForeground = this.foregroundSource.asObservable();
-    currenBackground = this.backgroundSource.asObservable();
-
-    constructor() { }
-
-    changeMessage(message: string) {
-        this.messageSource.next(message);
+    constructor() {
+        this.currentSizeSubject = new BehaviorSubject<string>('size1');
+        this.currentLevelSubject = new BehaviorSubject<string>('A');
+        this.currentForegorundSubject = new BehaviorSubject<string>('#000000');
+        this.currentBackgroundSubject = new BehaviorSubject<string>('#ffffff');
     }
 
-    changeLevel(level: string) {
-        this.levelSource.next(level);
+    public getCurrentForegorund(): Observable<string> {
+        return this.currentForegorundSubject.asObservable();
     }
 
-    changeForegorund(color: string) {
-        this.foregroundSource.next(color);
+    public getCurrentBackgroundSubject(): Observable<string> {
+        return this.currentBackgroundSubject.asObservable();
     }
 
-    changeBackgorund(color: string) {
-        this.backgroundSource.next(color);
-        console.log(this.currenBackground)
+    public getCurrentSize(): Observable<string> {
+        return this.currentSizeSubject.asObservable();
     }
 
+    public getCurrentLevel(): Observable<string> {
+        return this.currentLevelSubject.asObservable();
+    }
+
+    public updateCurrentSize(size: string): void {
+        this.currentSizeSubject.next(size);
+    }
+
+    public updateCurrentLevel(level: string): void {
+        this.currentLevelSubject.next(level);
+    }
 }
+
+export default MyService;

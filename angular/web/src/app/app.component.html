@@ -8,9 +8,10 @@
         </ul>
     </nav>
     <div class="abutton">
-        <p-toast></p-toast>
-        <p-menu (onShow)="getCurrentLocation()" #menu [model]="items" [popup]="true" tabindex="4"></p-menu>
-        <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" label="A11y Menu"></button>
+        <p-toast tabindex="1"></p-toast>
+        <p-menu (onShow)="getCurrentLocation()" #menu [model]="items" [popup]="true" tabindex="0"></p-menu>
+        <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" tabindex="0"
+            label="A11y Menu"></button>
         <div *ngIf="level == 'AAA'" class="colorPickerDiv" [style]="{'padding-top': '5px'}">
             <p-colorPicker aria-label="choose foreground color" class="colorPicker" [(ngModel)]="foreground"
                 (onChange)="changeForeground()"></p-colorPicker>

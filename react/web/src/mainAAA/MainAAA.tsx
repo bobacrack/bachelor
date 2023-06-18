@@ -6,21 +6,22 @@ import christ from '../assets/pexels-christyn-reyes-13458334.jpg'
 import josh from '../assets/pexels-josh-withers-16978839.jpg'
 import stjin from '../assets/pexels-stijn-dijkstra-16747506 (1).jpg'
 import MyService from '../service/Service';
-import './Main.css'
+import './MainAAA.css'
 
-interface MainAProps {
+interface MainAAAProps {
     size: string;
     level: string;
+    service: MyService;
+    foreground: string;
+    background: string;
 }
 
-const myService = new MyService();
 
 
-const Main: React.FC<MainAProps> = ({ size, level }) => {
-
-    const [currentLevel, setCurrentLevel] = useState<string>('');
+const MainAAA: React.FC<MainAAAProps> = ({ service, size, level, foreground, background }) => {
+    const [currentLevel, setCurrentLevel] = useState<string>('AAA');
     useEffect(() => {
-        setCurrentLevel('A')
+        service.updateCurrentLevel(currentLevel)
     }, [])
 
 
@@ -44,45 +45,46 @@ const Main: React.FC<MainAProps> = ({ size, level }) => {
     return (
         <div>
             <div className="welcome">
-                <h1 tabIndex={1}>Welcome</h1>
-                <h2 tabIndex={1}>Home Level A</h2>
+                <h1 tabIndex={0} style={{ color: foreground, backgroundColor: background }}>Welcome</h1>
+                <h2 tabIndex={0} style={{ color: foreground, backgroundColor: background }} >Home Level AAA</h2>
             </div>
             <div className='contentContainer'>
                 <div className="card">
-                    <Card className='card' title="Title" subTitle="Subtitle" header={headerGordon} >
-                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`}>
+                    <Card className='card' title="Title" subTitle="Subtitle" header={headerGordon} style={{ color: foreground, backgroundColor: background }}>
+                        <p style={{ color: foreground, backgroundColor: background }}
+                            className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
                             numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
                         </p>
                     </Card>
                 </div>
                 <div className="card">
-                    <Card title="Title" subTitle="Subtitle" className='card' header={headerChris} >
-                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`}>
+                    <Card title="Title" subTitle="Subtitle" className='card' header={headerChris} style={{ color: foreground, backgroundColor: background }} >
+                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`} style={{ color: foreground, backgroundColor: background }}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
                             numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
                         </p>
                     </Card>
                 </div>
                 <div className="card">
-                    <Card title="Title" subTitle="Subtitle" header={headerChrist} className="card">
-                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`}>
+                    <Card title="Title" subTitle="Subtitle" header={headerChrist} className="card" style={{ color: foreground, backgroundColor: background }}>
+                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`} style={{ color: foreground, backgroundColor: background }}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
                             numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
                         </p>
                     </Card>
                 </div>
                 <div className="card">
-                    <Card title="Title" subTitle="Subtitle" header={headerJosh} className="card">
-                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`}>
+                    <Card title="Title" subTitle="Subtitle" header={headerJosh} className="card" style={{ color: foreground, backgroundColor: background }}>
+                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`} style={{ color: foreground, backgroundColor: background }}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
                             numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
                         </p>
                     </Card>
                 </div>
                 <div className="card">
-                    <Card title="Title" subTitle="Subtitle" header={headerStjin} className="card">
-                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`}>
+                    <Card title="Title" subTitle="Subtitle" header={headerStjin} className="card" style={{ color: foreground, backgroundColor: background }}>
+                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`} style={{ color: foreground, backgroundColor: background }}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
                             numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
                         </p>
@@ -91,6 +93,6 @@ const Main: React.FC<MainAProps> = ({ size, level }) => {
             </div >
         </div>
     );
-}
+};
 
-export default Main;
+export default MainAAA;

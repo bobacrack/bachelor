@@ -1,80 +1,94 @@
-import React from 'react'
-import './MainAA.css'
+import React, { Component, useEffect, useState } from 'react';
 import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
 import gordon from '../assets/gordonPlant.jpg'
 import chris from '../assets/pexels-chris-hepworth-16047549.jpg'
 import christ from '../assets/pexels-christyn-reyes-13458334.jpg'
 import josh from '../assets/pexels-josh-withers-16978839.jpg'
 import stjin from '../assets/pexels-stijn-dijkstra-16747506 (1).jpg'
+import MyService from '../service/Service';
+import './MainAA.css'
 
-function MainAA() {
+interface MainAAProps {
+    size: string;
+    level: string;
+}
+
+const myService = new MyService();
+
+const MainAA: React.FC<MainAAProps> = ({ size, level }) => {
+    const [currentLevel, setCurrentLevel] = useState<string>('');
+    useEffect(() => {
+        setCurrentLevel('AA')
+    }, [])
+
+
 
 
     const headerGordon = (
         <img alt="Card" src={gordon} />
     );
-
-
+    const headerChris = (
+        <img alt="Card" src={chris} />
+    );
+    const headerChrist = (
+        <img alt="Card" src={christ} />
+    );
+    const headerJosh = (
+        <img alt="Card" src={josh} />
+    );
+    const headerStjin = (
+        <img alt="Card" src={stjin} />
+    );
     return (
         <div>
             <div className="welcome">
                 <h1 tabIndex={0}>Welcome</h1>
-                <h2 tabIndex={0}>Home Level AAA</h2>
+                <h2 tabIndex={0}>Home Level AA</h2>
             </div>
             <div className='contentContainer'>
-                <div className="card flex justify-content-center">
-                    <Card title="Title" subTitle="Subtitle" header={headerGordon} className="card">
-                        <p className="m-0">
+                <div className="card">
+                    <Card className='card' title="Title" subTitle="Subtitle" header={headerGordon} >
+                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
                             numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
                         </p>
                     </Card>
                 </div>
-            </div>
-            <div className='contentContainer'>
-                <div className="card flex justify-content-center">
-                    <Card title="Title" subTitle="Subtitle" header={headerGordon} className="md:w-25rem">
-                        <p className="m-0">
+                <div className="card">
+                    <Card title="Title" subTitle="Subtitle" className='card' header={headerChris} >
+                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
                             numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
                         </p>
                     </Card>
                 </div>
-            </div>
-            <div className='contentContainer'>
-                <div className="card flex justify-content-center">
-                    <Card title="Title" subTitle="Subtitle" header={headerGordon} className="md:w-25rem">
-                        <p className="m-0">
+                <div className="card">
+                    <Card title="Title" subTitle="Subtitle" header={headerChrist} className="card">
+                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
                             numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
                         </p>
                     </Card>
                 </div>
-            </div>
-            <div className='contentContainer'>
-                <div className="card flex justify-content-center">
-                    <Card title="Title" subTitle="Subtitle" header={headerGordon} className="md:w-25rem">
-                        <p className="m-0">
+                <div className="card">
+                    <Card title="Title" subTitle="Subtitle" header={headerJosh} className="card">
+                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
                             numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
                         </p>
                     </Card>
                 </div>
-            </div>
-            <div className='contentContainer'>
-                <div className="card flex justify-content-center">
-                    <Card title="Title" subTitle="Subtitle" header={headerGordon} className="md:w-25rem">
-                        <p className="m-0">
+                <div className="card">
+                    <Card title="Title" subTitle="Subtitle" header={headerStjin} className="card">
+                        <p className={`${size === 'size1' ? 'para-one' : size === 'size2' ? 'para-two' : 'para-half'}`}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
                             numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
                         </p>
                     </Card>
                 </div>
-            </div>
-
-        </div >
+            </div >
+        </div>
     );
 }
 
-export default MainAA
+export default MainAA;
