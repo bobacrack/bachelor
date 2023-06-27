@@ -3,9 +3,9 @@
     <h2 tabindex="0">Home Level AA</h2>
 </div>
 
-<div class="contentContainer">
-    <p-card (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')" tabindex="0"
-        [style]="{ width: '360px' }">
+<div class="contentContainer" aria-label="Copntaine with content cards inside">
+    <p-card aria-label="Card with content" (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')"
+        tabindex="0" [style]="{ width: '360px' }">
         <ng-template pTemplate="header">
             <img alt="topic card" src="../../assets/gordonPlant.jpg" />
         </ng-template>
@@ -20,8 +20,8 @@
         </p>
 
     </p-card>
-    <p-card (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')" tabindex="0"
-        [style]="{ width: '360px' }">
+    <p-card aria-label="Card with content" (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')"
+        tabindex="0" [style]="{ width: '360px' }">
         <ng-template pTemplate="header">
             <img alt="topic card" src="../../assets/pexels-chris-hepworth-16047549.jpg" />
         </ng-template>
@@ -36,8 +36,8 @@
         </p>
 
     </p-card>
-    <p-card (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')" tabindex="0"
-        [style]="{ width: '360px' }">
+    <p-card aria-label="Card with content" (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')"
+        tabindex="0" [style]="{ width: '360px' }">
         <ng-template pTemplate="header">
             <img alt="topic card" src="../../assets/pexels-stijn-dijkstra-16747506 (1).jpg" />
         </ng-template>
@@ -52,8 +52,8 @@
         </p>
 
     </p-card>
-    <p-card (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')" tabindex="0"
-        [style]="{ width: '360px' }">
+    <p-card aria-label="Card with content" (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')"
+        tabindex="0" [style]="{ width: '360px' }">
         <ng-template pTemplate="header">
             <img alt="topic card" src="../../assets/pexels-josh-withers-16978839.jpg" />
         </ng-template>
@@ -69,8 +69,8 @@
         </p>
 
     </p-card>
-    <p-card (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')" tabindex="0"
-        [style]="{ width: '360px' }">
+    <p-card aria-label="Card with content" (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')"
+        tabindex="0" [style]="{ width: '360px' }">
         <ng-template pTemplate="header">
             <img alt="Card" src="../../assets/pexels-christyn-reyes-13458334.jpg" />
         </ng-template>
@@ -85,4 +85,5 @@
         </p>
 
     </p-card>
+
 </div>

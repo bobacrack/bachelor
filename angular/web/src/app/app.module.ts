@@ -17,7 +17,6 @@ import { ButtonModule } from 'primeng/button';
 import { RegisterAAComponent } from './register-aa/register-aa.component';
 import { RegisterAAAComponent } from './register-aaa/register-aaa.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DataService } from './service/data.service';
 import { MessageService } from 'primeng/api';
 import { CardModule } from 'primeng/card';
 import { MainAAComponent } from './main-aa/main-aa.component';
@@ -63,7 +62,7 @@ import { ColorPickerModule } from 'primeng/colorpicker';
     CardModule,
     ColorPickerModule
   ],
-  providers: [DataService, MessageService],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

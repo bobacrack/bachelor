@@ -1,32 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, NgZone, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { MenuItem } from "primeng/api";
 import { DataService } from './service/data.service';
 import { LocationService } from './service/location.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
+
 
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message => this.size = message)
     this.data.currentLevel.subscribe(level => this.level = level)
     this.data.currentForeground.subscribe(color => this.foreground = color);
     this.data.currenBackground.subscribe(color => this.background = color);
+    this.location.currentBc.subscribe(bc => {
+      this.menuItems = bc;
+    })
   }
 
-  constructor(private data: DataService, private location: LocationService) {
-    document.getElementById
+
+  constructor(private data: DataService, private location: LocationService, private changeDetectorRef: ChangeDetectorRef) {
+  }
+
+  ngAfterViewInit(): void {
+    this.location.currentBc.subscribe(bc => {
+      this.menuItems = bc;
+    })
   }
 
   title = 'Accessibility possibility of implementation';
-  menuItems: MenuItem[] = this.location.breadcrumbLocation;
+  menuItems: MenuItem[];
 
   isExpanded: boolean = false;
   isSize: boolean = false;
-  size: string = "size1";
+  size: string = "size2";
   foreground: string = "#000000";
   background: string = "#ffffff";
   level: string;

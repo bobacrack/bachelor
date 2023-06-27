@@ -2,16 +2,17 @@
     <h2>Accessibility Test</h2>
     <nav class="navbar">
         <ul class="navLinks">
-            <li><a routerLink="" tabindex="0" target="_self">Home</a></li>
-            <li><a href="/register/A" tabindex="0" target="_self">About</a></li>
+            <li><a routerLink="/main/AA" tabindex="0" target="_self">Home</a></li>
+            <li><a routerLink="/register/A" tabindex="0" target="_self">About</a></li>
             <li><a href="#" tabindex="0" target="_self">Contact</a></li>
         </ul>
     </nav>
     <div class="abutton">
         <p-toast tabindex="1"></p-toast>
-        <p-menu (onShow)="getCurrentLocation()" #menu [model]="items" [popup]="true" tabindex="0"></p-menu>
-        <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" tabindex="0"
-            label="A11y Menu"></button>
+        <p-menu aria-label="Accessibility menu" (onShow)="getCurrentLocation()" #menu [model]="items" [popup]="true"
+            tabindex="0"></p-menu>
+        <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" tabindex="0" label="A11y Menu"
+            aria-label="Accessibility menu button"></button>
         <div *ngIf="level == 'AAA'" class="colorPickerDiv" [style]="{'padding-top': '5px'}">
             <p-colorPicker aria-label="choose foreground color" class="colorPicker" [(ngModel)]="foreground"
                 (onChange)="changeForeground()"></p-colorPicker>
@@ -20,8 +21,14 @@
         </div>
     </div>
 </header>
-<p-breadcrumb *ngIf="level == 'AAA'" styleClass="custom-breadcrumb" class="max-w-full" [model]="menuItems"
-    [home]="{ icon: ' pi pi-home' }"></p-breadcrumb>
+<div class="bread">
+    <div *ngIf="level == 'AAA'">
+        <a>
+            <i class="pi pi-home"></i>
+        </a>
+        <a *ngFor="let b of menuItems" [href]="b.url">{{ b.label }}</a>
+    </div>
+</div>
 
 <div class="container-fluid">
     <main role="main" class="">

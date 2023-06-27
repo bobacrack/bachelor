@@ -11,7 +11,7 @@ import { LocationService } from '../service/location.service';
 })
 export class MainAAAComponent implements OnDestroy, OnInit {
   menuItems: MenuItem[];
-  menuItem: MenuItem = { label: 'home', url: 'main/A', preserveFragment: true }
+  menuItem: MenuItem = { label: 'home', url: 'main/AAA', preserveFragment: true }
   menuHome: MenuItem;
   size: string;
   validated: boolean;
@@ -30,7 +30,7 @@ export class MainAAAComponent implements OnDestroy, OnInit {
   constructor(private data: DataService, private location: LocationService, private router: Router) {
   }
   ngOnDestroy(): void {
-    this.location.removeMenu();
+    //this.location.removeMenu();
   }
 
 
@@ -38,6 +38,7 @@ export class MainAAAComponent implements OnDestroy, OnInit {
     this.data.currentMessage.subscribe(message => this.size = message)
     this.location.currentLocation = 'main';
     this.menuHome = { icon: "pi pi-home" }
+    this.location.removeMenu();
     this.location.appendMenu(this.menuItem);
     this.menuItems = this.location.breadcrumbLocation;
     this.data.currentForeground.subscribe(color => this.foreground = color);
