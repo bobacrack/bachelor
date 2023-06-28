@@ -11,14 +11,16 @@ import './MainAA.css'
 interface MainAAProps {
     size: string;
     level: string;
+    service: MyService
 }
 
 const myService = new MyService();
 
-const MainAA: React.FC<MainAAProps> = ({ size, level }) => {
+const MainAA: React.FC<MainAAProps> = ({ size, level, service }) => {
     const [currentLevel, setCurrentLevel] = useState<string>('');
     useEffect(() => {
         setCurrentLevel('AA')
+        service.currentLocation = "../main"
     }, [])
 
 

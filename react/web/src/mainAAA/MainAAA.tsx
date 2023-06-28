@@ -22,6 +22,7 @@ const MainAAA: React.FC<MainAAAProps> = ({ service, size, level, foreground, bac
     const [currentLevel, setCurrentLevel] = useState<string>('AAA');
     useEffect(() => {
         service.updateCurrentLevel(currentLevel)
+        service.currentLocation = '../main'
     }, [])
 
 

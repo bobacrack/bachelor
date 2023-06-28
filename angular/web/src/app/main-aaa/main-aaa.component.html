@@ -2,11 +2,10 @@
     <h1 [ngStyle]="{ 'color': foreground, 'background-color': background  }" tabindex="0">Welcome</h1>
     <h2 [ngStyle]="{ 'color': foreground, 'background-color': background  }" tabindex="0">Home Level AAA</h2>
 </div>
-
 <div class="contentContainer" aria-label="Copntaine with content cards inside">
-    <p-card aria-label="Card with content" (click)="handleClick('/sub/AAA')" (keydown)="handleKeyDown($event, '/sub/A')"
-        tabindex="0" [style]="{ width: '360px' }">
-        <ng-template pTemplate="header">
+    <p-card (click)="handleClick('/sub/AAA')" (keydown)="handleKeyDown($event, '/sub/A')" tabindex="0"
+        [style]="{ width: '360px' }">
+        <ng-template alt="picture" pTemplate="header">
             <img alt="topic card" src="../../assets/gordonPlant.jpg" />
         </ng-template>
         <h3 [ngStyle]="{ 'color': foreground, 'background-color': background  }"

@@ -6,6 +6,13 @@ class MyService {
     private currentForegorundSubject: BehaviorSubject<string>;
     private currentBackgroundSubject: BehaviorSubject<string>;
 
+    currentLocation = ""
+    breadcrumbLocation: {} = [];
+    isRegister: boolean = false;
+    private bcSource = new BehaviorSubject<{}>([{ label: 'content', url: 'main/AAA', preserveFragment: true }]);
+    private currentBc = this.bcSource.asObservable();
+
+
 
     constructor() {
         this.currentSizeSubject = new BehaviorSubject<string>('size1');
